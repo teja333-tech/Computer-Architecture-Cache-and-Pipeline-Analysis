@@ -1,0 +1,15 @@
+.data
+value: .word 10
+
+.text
+.globl main
+
+main:
+    lw   x5, value      # Load value into x5
+    add  x6, x5, x5     # Dependent instruction
+    sub  x7, x6, x5
+    addi x8, x7, 5
+    add  x9, x8, x6
+
+    li a7, 10
+    ecall
